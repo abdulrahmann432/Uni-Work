@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <h2>Scandinavian countries population</h2>
+  <div id="myPie2"></div>
+
+  <script>
+    const xArray = ["Sweden", "Norway", "Denmark", "Finland"];
+    const yArray = [10550000, 5500000, 6000000, 5600000];
+
+    const data = [{
+      labels: xArray,
+      values: yArray,
+      hole: 0.5,
+      type: "pie",
+      marker: {
+        colors: ["#0077b6", "#00b4d8", "#90e0ef", "#caf0f8"]
+      }
+    }];
+
+    const layout = {
+      title: "Scandinavian countries population",
+    };
+
+    Plotly.newPlot("myPie2", data, layout);
+  </script>
+</body>
+</html>
