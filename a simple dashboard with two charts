@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Election Results Poland 2023</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+
+  <body>
+    <h2>Election results Poland 2023</h2>
+
+    <!-- Bar Chart -->
+    <div id="barChart" style="width:45%;display:inline-block;"></div>
+
+    <!-- Pie (Donut) Chart -->
+    <div id="pieChart" style="width:45%;display:inline-block;"></div>
+
+    <script>
+      // Bar chart data
+      const partiesBar = ["PiS", "KO", "TD", "Lewica", "Konfederacja"];
+      const resultsBar = [35.7, 30.4, 14.42, 8.55, 7.11];
+
+      const barData = [{
+        x: partiesBar,
+        y: resultsBar,
+        type: "bar",
+        marker: { color: "rgba(255, 99, 71, 0.7)" }
+      }];
+
+      const barLayout = {
+        title: "Election results Poland 2023",
+        yaxis: { title: "Percentage (%)" }
+      };
+
+      Plotly.newPlot("barChart", barData, barLayout);
+
+      // Pie (Donut) chart data
+      const partiesPie = ["PiS", "KO", "TD", "Lewica", "Konfederacja"];
+      const resultsPie = [42.2, 34.1, 14.1, 5.65, 3.91];
+
+      const pieData = [{
+        labels: partiesPie,
+        values: resultsPie,
+        type: "pie",
+        hole: 0.4
+      }];
+
+      const pieLayout = {
+        title: "Election results Poland 2023"
+      };
+
+      Plotly.newPlot("pieChart", pieData, pieLayout);
+    </script>
+  </body>
+</html>
