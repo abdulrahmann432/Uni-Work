@@ -5,11 +5,9 @@
   </head>
   <body>
     <div id="myPlot" style="width:100%;max-width:700px"></div>
-
     <script>
       // New function expression
       let exp = "3 * x - 10";
-
       // Generate values
       const xValues = [];
       const yValues = [];
@@ -17,7 +15,6 @@
         xValues.push(x);
         yValues.push(eval(exp));
       }
-
       // Define Data (changed color and style)
       const data = [{
         x: xValues,
@@ -27,12 +24,10 @@
         line: { color: "orange", width: 3 },
         marker: { color: "red", size: 6 }
       }];
-
       // Define Layout
       const layout = {
-        title: "y = " + exp,
+        title: { text: "y = " + exp }
       };
-
       // Display using Plotly
       Plotly.newPlot("myPlot", data, layout);
     </script>
